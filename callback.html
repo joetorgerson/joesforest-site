@@ -1,8 +1,13 @@
-<!DOCTYPE html>
 <html>
-<head><title>Spotify Callback</title></head>
 <body>
-  <h1>Spotify Redirect Successful</h1>
-  <p>Check the URL bar for your token.</p>
+  <h2>Spotify Authorization Code</h2>
+  <p>Copy the code below and paste it into Excel.</p>
+  <pre id="code"></pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    document.getElementById("code").innerText = code || "No code found.";
+  </script>
 </body>
 </html>
